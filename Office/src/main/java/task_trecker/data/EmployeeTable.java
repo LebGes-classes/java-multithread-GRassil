@@ -1,6 +1,6 @@
-package data;
+package task_trecker.data;
 
-import models.Employee;
+import task_trecker.models.Employee;
 import org.apache.poi.ss.usermodel.Row;
 
 public class EmployeeTable extends Table<Employee> {

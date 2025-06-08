@@ -1,6 +1,6 @@
-package models;
+package task_trecker.models;
 
-public class Employee {
+public class Employee implements Cloneable {
     private int id; // id работника
     private String name; // Имя работника
 
@@ -8,7 +8,6 @@ public class Employee {
 
     private int completedTasksValue; // Сколько тасков закрыл
     private int timeAtWork; // Сколько времени на работе
-
     private int timeBusy; // Сколько времени на выполнении задачи
 
     public Employee(int id, String name) {
@@ -55,5 +54,21 @@ public class Employee {
 
     public void addCompletedTasksValue(int value) {
         completedTasksValue += value;
+    }
+
+    public void setValues() {
+        completedTasksValue = 0;
+        timeAtWork = 0;
+        timeBusy = 0;
+    }
+
+
+    @Override
+    public Employee clone(){
+        try {
+            return (Employee) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

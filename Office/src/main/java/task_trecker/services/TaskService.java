@@ -1,7 +1,7 @@
-package services;
+package task_trecker.services;
 
-import data.TaskTable;
-import models.Task;
+import task_trecker.data.TaskTable;
+import task_trecker.models.Task;
 
 import java.util.List;
 

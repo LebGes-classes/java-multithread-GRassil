@@ -1,4 +1,4 @@
-package models;
+package task_trecker.models;
 
 import java.util.Random;
 

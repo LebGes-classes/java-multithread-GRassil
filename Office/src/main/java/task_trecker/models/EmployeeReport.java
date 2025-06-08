@@ -1,4 +1,4 @@
-package models;
+package task_trecker.models;
 
 public class EmployeeReport {
     int day;
@@ -25,9 +25,9 @@ public class EmployeeReport {
     @Override
     public String toString() {
         return String.format(
-                "Отчёт за день %d | Сотрудник: %d - %s | " +
-                "Рабочее время: %d ч | Занятое время: %d ч | " +
-                "Эффективность: %.1f%% | Выполнено задач: %d \n",
+                "\nОтчёт за день %d \t| Сотрудник: %d - %s \t| " +
+                "Рабочее время: %d ч \t| Занятое время: %d ч \t| " +
+                "Эффективность: %.1f%% \t| Выполнено задач: %d",
                 day,
                 employee.getId(),
                 employee.getName(),

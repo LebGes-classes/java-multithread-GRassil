@@ -1,18 +1,20 @@
-import models.Employee;
-import models.EmployeeReport;
-import services.EmployeeService;
-import services.EmployeeReportService;
-import services.TaskService;
+package task_trecker;
+
+import task_trecker.models.Employee;
+import task_trecker.services.EmployeeService;
+import task_trecker.services.EmployeeReportService;
+import task_trecker.services.TaskService;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Office {
-    List<EmployeeThread> employeeThreads = new ArrayList<>();
+    private List<EmployeeThread> employeeThreads = new ArrayList<>();
 
-    List<Employee> employees = EmployeeService.getAll();
+    private List<Employee> employees;
 
     public void work(){
+        employees = EmployeeService.getAll();
         int day = 1;
         while (!TaskService.isEmpty()) {
             System.out.println("--- День " + day + " ---");
@@ -20,12 +22,11 @@ public class Office {
             workDay(); // рабочий день
 
             // Сохраняем промежуточную статистику
-            List<EmployeeReport> employeeReports = EmployeeReportService.saveAll(employees, day);
-
-            System.out.println(employeeReports);
+            EmployeeReportService.save(employees, day);
 
             day++;
         }
+        EmployeeReportService.finalSave();
     }
 
     public void workDay(){

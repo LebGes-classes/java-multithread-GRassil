@@ -1,9 +1,11 @@
-import models.Employee;
-import models.Task;
+package task_trecker;
+
+import task_trecker.models.Employee;
+import task_trecker.models.Task;
 
 import java.util.Random;
 
-import static services.TaskService.getTask;
+import static task_trecker.services.TaskService.getTask;
 
 public class EmployeeThread extends Thread{
     private Employee  employee;
@@ -15,7 +17,7 @@ public class EmployeeThread extends Thread{
     @Override
     public void run() {
         Random random = new Random();
-        int workday = 8 + random.nextInt(3); // Рабочий день с учетом опоздания/задержки после работы
+        int workday = 8 + random.nextInt(-2,3); // Рабочий день с учетом опоздания/задержки после работы
         employee.setTimeAtWork(workday);
 
         while (workday>0) {

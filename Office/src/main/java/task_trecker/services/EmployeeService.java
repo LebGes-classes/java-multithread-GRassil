@@ -1,7 +1,7 @@
-package services;
+package task_trecker.services;
 
-import data.EmployeeTable;
-import models.Employee;
+import task_trecker.data.EmployeeTable;
+import task_trecker.models.Employee;
 
 import java.util.List;
 

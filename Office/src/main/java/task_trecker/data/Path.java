@@ -1,4 +1,4 @@
-package data;
+package task_trecker.data;
 
 public class Path {
     private static final String XLSXPATH = "src/main/resources/Table.xlsx";
