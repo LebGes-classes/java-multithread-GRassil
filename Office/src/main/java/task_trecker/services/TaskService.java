@@ -6,7 +6,7 @@ import task_trecker.models.Task;
 import java.util.List;
 
 public class TaskService {
-    private static TaskTable taskTable = new TaskTable();
+    private static final TaskTable taskTable = new TaskTable();
     private static List<Task> tasks = taskTable.read();
 
     /// Возвращаем задачу

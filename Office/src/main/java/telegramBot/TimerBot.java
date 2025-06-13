@@ -57,13 +57,13 @@ public class TimerBot extends TelegramLongPollingBot {
                 sendMessage(chatId, "Введите положительное число секунд");
             }
         } else {
-            sendMessage(chatId, "Неверный формат. Используйте: /timer 300");
+            sendMessage(chatId, "Неверный формат. Используйте: /timer 10");
         }
     }
 
     private void startTimer(long chatId, int seconds) {
         TimerTask timerTask = new TimerTask(chatId, seconds, this);
-        executor.schedule(timerTask, seconds, TimeUnit.SECONDS);
+        executor.schedule(timerTask, seconds, TimeUnit.SECONDS);// ставим сообщение на отложенную отправку в пул потоков
     }
 
     protected void sendMessage(long chatId, String text) {

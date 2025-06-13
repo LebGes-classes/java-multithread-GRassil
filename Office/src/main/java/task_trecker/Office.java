@@ -22,11 +22,11 @@ public class Office {
             workDay(); // рабочий день
 
             // Сохраняем промежуточную статистику
-            EmployeeReportService.save(employees, day);
+            EmployeeReportService.addToSaveList(employees, day);
 
             day++;
         }
-        EmployeeReportService.finalSave();
+        EmployeeReportService.finalSave(); //Отправляем инфу в эксель
     }
 
     public void workDay(){
@@ -41,7 +41,7 @@ public class Office {
             thread.start();
         }
 
-        // Ожидаем завершения всех потоков
+        // Ожидаем завершения всех потоков, окончание рабочего дня
         for (EmployeeThread thread : employeeThreads) {
             try {
                 thread.join();

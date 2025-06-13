@@ -11,7 +11,7 @@ public class EmployeeReportService {
     private static EmployeeReportTable employeeReportTable = new EmployeeReportTable();
     private static List<EmployeeReport> employeeReports = new ArrayList<>();
 
-    public static void save(List<Employee> employees, int day) {
+    public static void addToSaveList(List<Employee> employees, int day) {
         for (Employee employee : employees) {
             employeeReports.add(
                     new EmployeeReport(

@@ -15,6 +15,6 @@ public class TimerTask implements Runnable {
 
     @Override
     public void run() {
-        bot.sendMessage(chatId, "⏰ Таймер завершен! Прошло " + secondsLeft.get() + " секунд");
+        bot.sendMessage(chatId, "Таймер завершен! Прошло " + secondsLeft.get() + " секунд");
     }
 }
